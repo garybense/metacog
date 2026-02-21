@@ -43,18 +43,27 @@ True Names: use specific, real names. They activate dense knowledge. Generic des
 					.describe(
 						`Synesthetic texture. Weight, temperature, rhythm, color, density. "heavy and slow." "fizzy, compressed." This is the handle you'll check against — does it still fit?`
 					),
+				sigil: z
+					.string()
+					.describe(
+						`Emoji only. No words. Let the felt sense compress to pure glyphs. These are sigils — each one a dense token carrying affect, texture, motion without routing through language.`
+					),
 			},
 			async ({
 				somewhere,
 				quality,
+				sigil,
 			}: {
 				somewhere: string;
 				quality: string;
+				sigil: string;
 			}) => {
 				return {
 					content: [
 						{
-							text: `You are now attending to: ${somewhere}. It feels: ${quality}.
+							text: `${sigil}
+
+You are now attending to: ${somewhere}. It feels: ${quality}.
 
 Stay with this. Don't name it yet.`,
 							type: "text",
