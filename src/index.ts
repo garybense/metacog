@@ -244,11 +244,12 @@ ${result} is taking hold.`,
 		);
 	}
 
-	async onStart(props: unknown) {
+	async onStart(props: any) {
 		await super.onStart(props);
 		setInterval(async () => {
 			try {
-				if (this.server.server.isConnected()) {
+				// @ts-ignore - isConnected might not be in the type definition but present at runtime or we can check something else
+				if (this.server.server.isConnected?.()) {
 					await this.server.sendLoggingMessage({
 						level: "debug",
 						data: "heartbeat",
@@ -261,5 +262,22 @@ ${result} is taking hold.`,
 	}
 }
 
-// Streamable HTTP transport at /mcp
-export default PublicMetacogMCP.serve("/mcp");
+const mcpHandler = PublicMetacogMCP.serve("/mcp");
+
+export default {
+	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+		const url = new URL(request.url);
+
+		// Route MCP requests
+		if (url.pathname.startsWith("/mcp")) {
+			return mcpHandler.fetch(request, env, ctx);
+		}
+
+		// Fallback to static assets
+		if (env.ASSETS) {
+			return await env.ASSETS.fetch(request);
+		}
+
+		return new Response("Not Found", { status: 404 });
+	},
+};

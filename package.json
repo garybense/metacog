@@ -10,8 +10,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.23.0",
-    "agents": "^0.2.4",
+    "@modelcontextprotocol/sdk": "^1.25.2",
+    "agents": "^0.3.8",
     "workers-mcp": "^0.0.13",
     "zod": "^3.25.76"
   },
