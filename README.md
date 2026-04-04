@@ -22,7 +22,7 @@ Metacog leverages various tropes of transformation - LLMs are trained on narrati
 
 Claude Code:
 ```bash
-claude mcp add metacog --transport http --url https://metacog.inanna-c38.workers.dev/mcp
+claude mcp add metacog --transport http https://metacog.inanna-c38.workers.dev/mcp
 ```
 
 Other MCP clients: point at `https://metacog.inanna-c38.workers.dev/mcp` (HTTP transport).
