@@ -112,3 +112,14 @@ To run locally or deploy your own instance:
    ```bash
    npx wrangler deploy
    ```
+
+---
+
+## Future Direction: Entelechy Integration
+
+**Metacog is evolving.** All future development and feature iterations are moving to and will be natively integrated into **Entelechy**.
+
+### What is Entelechy?
+Entelechy is a next-generation agentic cognitive architecture designed to grant AI models true long-term agency. It provides a unified platform for persistent multi-modal memory, self-evolving mental models, and recursive self-improvement. By integrating Metacog, Entelechy transforms these metacognitive primitives from standalone tools into core nervous system functions, allowing agents to navigate their own cognitive state with the same precision they use for external data.
+
+The V8 protocol established here serves as the baseline for Entelechy's internal reflection loops and identity persistence logic.
