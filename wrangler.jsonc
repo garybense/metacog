@@ -33,6 +33,12 @@
 		"directory": "./public",
 		"binding": "ASSETS"
 	},
+	"kv_namespaces": [
+		{
+			"binding": "STATE",
+			"id": "c547d5ededb94ad3807833985144358d"
+		}
+	],
 	"dev": {
 		"port": 8788
 	}
